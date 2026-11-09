@@ -1,0 +1,107 @@
+{
+  "kind": "SIMULATED agents, illustrative prices (USD/1M tokens: large 15/75, medium 3/15, small 0.25/1.25)",
+  "date": "2026-11-09",
+  "budget": {
+    "max_usd": 1.0,
+    "max_steps": 50,
+    "max_depth": 3,
+    "max_tokens": 500000,
+    "max_repeats": 3,
+    "repeat_window": 10,
+    "max_cycle_len": 4,
+    "projection_trip_ratio": 2.0
+  },
+  "unguarded_hard_ceiling_steps": 200,
+  "agents": {
+    "healthy": {
+      "without_kill_switch": {
+        "outcome": "completed",
+        "steps": 6,
+        "spent_usd": 0.099,
+        "tokens": 23400,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      },
+      "with_kill_switch": {
+        "outcome": "completed",
+        "steps": 6,
+        "spent_usd": 0.099,
+        "tokens": 23400,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      }
+    },
+    "runaway_repeat": {
+      "without_kill_switch": {
+        "outcome": "hit_200_step_ceiling",
+        "steps": 200,
+        "spent_usd": 3.0,
+        "tokens": 680000,
+        "max_depth_seen": 0,
+        "over_budget_usd": 2.0
+      },
+      "with_kill_switch": {
+        "outcome": "repeat_tool_call",
+        "steps": 3,
+        "spent_usd": 0.045,
+        "tokens": 10200,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      }
+    },
+    "oscillate": {
+      "without_kill_switch": {
+        "outcome": "hit_200_step_ceiling",
+        "steps": 200,
+        "spent_usd": 0.225,
+        "tokens": 580000,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      },
+      "with_kill_switch": {
+        "outcome": "repeat_tool_call",
+        "steps": 5,
+        "spent_usd": 0.0056,
+        "tokens": 14500,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      }
+    },
+    "context_bloat": {
+      "without_kill_switch": {
+        "outcome": "hit_200_step_ceiling",
+        "steps": 200,
+        "spent_usd": 1809.0,
+        "tokens": 120280000,
+        "max_depth_seen": 0,
+        "over_budget_usd": 1808.0
+      },
+      "with_kill_switch": {
+        "outcome": "projected_cost",
+        "steps": 3,
+        "spent_usd": 0.54,
+        "tokens": 31200,
+        "max_depth_seen": 0,
+        "over_budget_usd": 0.0
+      }
+    },
+    "recursive_spawn": {
+      "without_kill_switch": {
+        "outcome": "completed",
+        "steps": 127,
+        "spent_usd": 1.524,
+        "tokens": 304800,
+        "max_depth_seen": 7,
+        "over_budget_usd": 0.524
+      },
+      "with_kill_switch": {
+        "outcome": "max_depth",
+        "steps": 3,
+        "spent_usd": 0.036,
+        "tokens": 7200,
+        "max_depth_seen": 4,
+        "over_budget_usd": 0.0
+      }
+    }
+  }
+}
